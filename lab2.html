@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hackathon Registration</title>
+<link rel="stylesheet" href="style2.css">
+</head>
+<body>
+<img src="technology.jpg" class="bg" alt="Technology Background">
+
+<nav>
+<h2>Hackathon 2026</h2>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#register">Register</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section id="home"><div class="box">
+<h1>Hackathon 2026</h1>
+<h3>Innovate • Code • Inspire</h3>
+<p>Join India's premier national hackathon where innovative minds come together to solve real-world challenges through technology, creativity, and teamwork. Showcase your coding skills, compete with talented developers, and win exciting prizes while building solutions for a better future.</p>
+<button onclick="openModal('rulesModal')">View Rules</button>
+<a href="#register"><button>Register Now</button></a>
+</div></section>
+
+<section id="about"><div class="box">
+<h1>About</h1>
+<p>Hackathon 2026 is a national-level innovation event designed to encourage students to develop creative solutions for real-world problems using modern technologies. Participants will collaborate in teams, build innovative prototypes, and present their ideas before industry experts and mentors. The event promotes learning, teamwork, problem-solving, and entrepreneurial thinking.</p>
+</div></section>
+
+<section id="gallery"><div class="box">
+<h1>Technologies</h1>
+<div class="grid">
+<div class="card" onclick="openModal('aiModal')">Artificial Intelligence</div>
+<div class="card" onclick="openModal('mlModal')">Machine Learning</div>
+<div class="card" onclick="openModal('cloudModal')">Cloud Computing</div>
+<div class="card" onclick="openModal('cyberModal')">Cyber Security</div>
+<div class="card" onclick="openModal('iotModal')">Internet of Things</div>
+<div class="card" onclick="openModal('webModal')">Web Development</div>
+</div>
+</div></section>
+
+<section id="register"><div class="box">
+<h1>Hackathon Registration Form</h1>
+<p>
+Complete the registration form below to participate in Hackathon 2026. Team participation is encouraged, with a maximum of four members per team. Ensure that all information entered is accurate before submission.
+</p>
+<input id="name" type="text" placeholder="Full Name"><br>
+<input type="email" placeholder="Email"><br>
+<input type="text" placeholder="College"><br>
+<button onclick="saveName()">Save Registration</button>
+</div></section>
+
+<section id="contact"><div class="box">
+<h1>Contact Us</h1>
+
+<p>
+
+For any queries related to registration, event schedule, sponsorship, or participation, feel free to contact our organizing committee.
+
+</p>
+
+<p>Email: hackathon2026@gmail.com</p>
+
+<p>Phone: +91 9876543210</p>
+
+<p>Website: www.hackathon2026.com</p>
+
+```html
+<section id="thankyou">
+
+<div class="box">
+
+<h1>Thank You for Registering!</h1>
+
+<p>
+
+Your registration has been successfully recorded. We appreciate your enthusiasm for innovation and technology. Our team will contact you with further event details via email. We look forward to seeing you at Hackathon 2026 and wish you the very best for the competition.
+
+</p>
+
+<a href="#home">
+
+<button>
+
+Back to Home
+
+</button>
+
+</a>
+
+</div>
+
+</section>
+```
+
+
+<h1>Your Location</h1>
+
+<p>
+
+Click the button below to allow the browser to access your current location using the HTML5 Geolocation API. This feature helps organizers understand participant distribution across regions.
+
+</p>
+<button onclick="getLocation()">Get Location</button>
+<p id="demo"></p>
+</div></section>
+
+<div id="rulesModal" class="modal"><div class="modal-content"><h2>Hackathon Rules & Guidelines</h2>
+
+<p>• Maximum 4 participants per team.</p>
+
+<p>• Solutions must be original and innovative.</p>
+
+<p>• Plagiarism or copied code will result in disqualification.</p>
+
+<p>• Participants must bring their own laptops and chargers.</p>
+
+<p>• Judges' decisions will be final and binding.</p>
+
+<p>• Maintain professionalism and teamwork throughout the event.</p><button onclick="closeModal('rulesModal')">Close</button></div></div>
+<div id="aiModal" class="modal"><div class="modal-content"><h2>Artificial Intelligence</h2><p>AI enables machines to perform intelligent tasks.</p><button onclick="closeModal('aiModal')">Close</button></div></div>
+<div id="mlModal" class="modal"><div class="modal-content"><h2>Machine Learning</h2><p>ML learns from data.</p><button onclick="closeModal('mlModal')">Close</button></div></div>
+<div id="cloudModal" class="modal"><div class="modal-content"><h2>Cloud Computing</h2><p>Cloud provides online computing resources.</p><button onclick="closeModal('cloudModal')">Close</button></div></div>
+<div id="cyberModal" class="modal"><div class="modal-content"><h2>Cyber Security</h2><p>Cyber Security protects digital systems.</p><button onclick="closeModal('cyberModal')">Close</button></div></div>
+<div id="iotModal" class="modal"><div class="modal-content"><h2>Internet of Things</h2><p>IoT connects smart devices.</p><button onclick="closeModal('iotModal')">Close</button></div></div>
+<div id="webModal" class="modal"><div class="modal-content"><h2>Web Development</h2><p>Build websites and web apps.</p><button onclick="closeModal('webModal')">Close</button></div></div>
+
+<script>
+function saveName(){
+ const name=document.getElementById('name').value;
+ localStorage.setItem('Student',name);
+ alert('Registration Saved!');
+}
+function getLocation(){
+ navigator.geolocation.getCurrentPosition(function(pos){
+ document.getElementById('demo').innerHTML='Latitude: '+pos.coords.latitude+'<br>Longitude: '+pos.coords.longitude;
+ });
+}
+function openModal(id){document.getElementById(id).style.display='block';}
+function closeModal(id){document.getElementById(id).style.display='none';}
+</script>
+
+</body>
+</html>
